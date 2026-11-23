@@ -1,0 +1,33 @@
+# Core (dataset, preprocessing, modeling, inference, evaluation)
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.2
+librosa==0.10.2
+soundfile==0.12.1
+scikit-learn==1.5.0
+joblib==1.4.2
+pyyaml==6.0.1
+
+# Dev / testing
+pytest==8.2.2
+
+# --- Optional: only needed for the LCNN comparison model ---
+# (src/modeling/lcnn.py). Not required for the primary svm_baseline model.
+# Install separately, matching your CPU/CUDA setup, e.g.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# or the CUDA build appropriate for your GPU.
+# torch>=2.0
+
+# NOTE on ffmpeg: codec-transcode degradation
+# (src/preprocessing/degradations.py) shells out to the `ffmpeg` binary
+# rather than a Python package. Install it separately (see setup commands
+# in the chat response); it is not a pip package.
+
+# --- Streamlit interface (streamlit_app/) ---
+# 1.40+ is needed for st.audio_input (browser microphone recording); older versions
+# still run the app but offer file upload only.
+streamlit>=1.40,<2
+
+# --- Optional: only for the challenge-response "SpeechRecognition" option ---
+# Sends the reply audio to an online service. Off by default; see the app's privacy note.
+# SpeechRecognition>=3.10
