@@ -16,5 +16,4 @@ speaking, does not monitor phone calls, and never disconnects or blocks anything
 ```bash
 streamlit run streamlit_app/app.py
 ```
-The sidebar's model folder is relative to where you launch the command. After retraining a model in the
-same folder, clear Streamlit's cache (press `C` in the app, or restart) so the new files are loaded.
+
